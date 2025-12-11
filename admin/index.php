@@ -1,0 +1,56 @@
+<?php
+include("../Koneksi/koneksi.php");
+error_reporting(0);
+session_start();
+
+if (isset($_POST['submit'])) {
+    $username = mysqli_real_escape_string($db, $_POST['username']);
+    $password = mysqli_real_escape_string($db, $_POST['password']);
+    // Hash password using MD5 (update hashing if possible)
+    $hashed_password = md5($password);
+    $loginquery = "SELECT * FROM admin WHERE username='$username' AND password='$hashed_password'";
+    $result = mysqli_query($db, $loginquery);
+    if (!$result) {
+        die("Error in SQL Query: " . mysqli_error($db));
+    }
+    $row = mysqli_fetch_array($result);
+    if (is_array($row)) {
+        $_SESSION["adm_id"] = $row['adm_id'];
+        header("refresh:1;url=dashboard.php");
+    } else {
+        echo "<script>alert('Invalid Username or Password!');</script>";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="css/loginadm.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="info">
+      <h1>Admin Panel</h1>
+    </div>
+    <div class="form">
+      <div class="thumbnail">
+        <img src="../images/manager.png" alt="Manager Icon" />
+      </div>
+      <form class="login-form" action="index.php" method="post">
+        <input type="text" placeholder="Username" name="username" required />
+        <input type="password" placeholder="Password" name="password" required />
+        <input type="submit" name="submit" value="Login" />
+      </form>
+    </div>
+  </div>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='js/index.js'></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+/* Navbar */
+.navbar {
+    background-color: #343a40;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed !important; /* Tetap di posisi tetap */
+    top: 0 !important;
+    z-index: 9999 !important; /* Z-index tinggi agar berada di atas elemen lain */
+    width: 100% !important;
+    overflow-x: hidden;
+    padding: 0.95rem 1rem; /* Konsisten dengan padding */
+    background-image: url("../images/menu-bg.jpg"); /* Background gambar navbar */
+    border-radius: 0;
+}
+
+.navbar-brand img {
+    height: 50px;
+    max-width: 100%; /* Mencegah logo melebar */
+    border-radius: 8px; /* Rounded edges */
+}
+
+.navbar .nav-link {
+    color: #fff !important;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    margin-top: 6px;
+}
+
+.navbar .nav-link:hover {
+    color: #ffd700 !important;
+}
+
+/* Shopping Cart Button */
+#shopping-cart-button {
+    position: relative;
+    display: inline-block;
+    margin-right: 1rem; /* Spasi dari elemen lain */
+    margin-top: 0px; /* Sesuaikan posisi tombol */
+}
+
+/* Badge */
+.nav-item .badge {
+    background-color: #ff4c4c; /* Warna badge merah */
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: -2px;
+    right: -5px;
+    border-radius: 100%; /* Badge bulat */
+    padding: 2px 5px;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border: none;
+    outline: none;
+    margin-right: 1rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 40px;
+    }
+
+    .nav-item {
+        text-align: center; /* Pusatkan item pada layar kecil */
+    }
+
+    #shopping-cart-button {
+        margin: 0 auto; /* Pusatkan tombol belanja */
+    }
+}

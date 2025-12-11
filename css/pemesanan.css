@@ -1,0 +1,219 @@
+/* Reset dasar */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Header */
+h2 {
+    text-align: center;
+}
+
+h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    text-align: left; /* Rata kiri */
+}
+
+/* Container utama */
+.container {
+    max-width: 800px; /* Lebar lebih kecil */
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Header untuk Penerima dan tombol Pengguna */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Membuat 2 kolom, 1 untuk h3 dan 1 untuk tombol */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#auto-fill-btn {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#auto-fill-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Ringkasan belanja */
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between; /* Memisahkan nama dan harga */
+    align-items: center; /* Rata tengah secara vertikal */
+    gap: 10px;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    line-height: 0.8;
+}
+
+#cart-items img {
+    display: none; /* Sembunyikan elemen gambar */
+}
+
+/* Alamat Pengiriman & Form */
+.address-form {
+    margin-top: 10px;
+}
+
+.address-form input, .address-form textarea {
+    width: 100%;
+    margin: 8px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Opsi pembayaran & pengiriman */
+.payment-options, .shipping-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.option {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-align: center; /* Rata tengah */
+    font-size: 14px;
+    cursor: pointer;
+    background-color: white; /* Warna default */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.option:hover {
+    border-color: #007bff;
+    background-color: #e9f8ff;
+}
+
+.option.selected {
+    background-color: #007bff; /* Warna biru saat dipilih */
+    color: white; /* Teks menjadi putih agar terlihat */
+    border-color: #007bff;
+}
+
+/* Total pembayaran */
+.total {
+    text-align: right; /* Rata kiri */
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Tombol */
+button {
+    display: block;
+    width: 200px;
+    margin: 10px 0 0 auto; /* Menggeser tombol ke kanan */
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.button-container {
+    text-align: right; /* Menggeser tombol ke kanan */
+}
+
+/* Responsif untuk layar kecil */
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    #cart-items li {
+        flex-direction: column;
+        text-align: right;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Container Dropdown */
+.dropdown-container {
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    appearance: none; /* Hilangkan default style browser */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown Arrow Custom */
+.dropdown-container::after {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none; /* Biar tidak mengganggu interaksi dropdown */
+}
+
+/* Hover dan Fokus Dropdown */
+.dropdown:hover, .dropdown:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Gaya untuk tombol tutup keranjang di kiri atas */
+#close-cart-btn {
+    font-size: 30px;      /* Ukuran ikon */
+    color: #333;          /* Warna default */
+    position: absolute;   /* Posisi absolut */
+    top: 15px;            /* Jarak dari atas */
+    left: 15px;           /* Jarak dari kiri */
+    cursor: pointer;      /* Ubah kursor menjadi pointer */
+    font-weight: bold;    /* Tebalkan ikon */
+}
+
+#close-cart-btn:hover {
+    color: #d9534f;       /* Warna merah saat dihover */
+}

@@ -1,0 +1,349 @@
+/* Container menu makananya fairuz */
+
+/* Container grid */
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 5000px;
+  margin-top: 0rem;
+  justify-content: center;
+  align-items: start; /* Pastikan card sejajar di bagian atas */
+  height: calc(100vh - 100px); /* Sesuaikan tinggi sesuai kebutuhan */
+  overflow-y: auto; /* Aktifkan scroll hanya untuk elemen ini */
+  overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+
+/* Card styling */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Tata letak vertikal */
+    justify-content: space-between; /* Rapatkan konten dalam card */
+    padding: 20px;
+    width: 600px; /* Lebar tetap untuk semua card */
+    height: 400px; /* Tinggi tetap untuk semua card */
+    margin: auto; /* Card tetap rata tengah */
+}
+
+/* Product image */
+.product-image {
+    width: 70%;
+    height: 150px; /* Tinggi tetap untuk gambar */
+    object-fit: cover; /* Gambar akan dipotong agar sesuai dengan container */
+    border-radius: 10px;
+    margin: 0 auto 15px auto; /* Rata tengah gambar */
+}
+
+/* Product title */
+.product-title {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #333;
+}
+
+/* Product description */
+.product-description {
+    font-size: 1rem;
+    color: #666;
+    margin: 10px 0;
+    line-height: 1.5; /* Jarak antar baris */
+    text-align: justify; /* Rata kiri-kanan untuk tampilan seperti paragraf */
+    word-wrap: break-word; /* Pastikan teks tidak keluar dari container */
+    overflow: hidden; /* Hilangkan teks yang terlalu panjang */
+    text-overflow: ellipsis; /* Tambahkan tiga titik jika teks terpotong */
+    max-height: 50px; /* Batasi tinggi maksimal deskripsi */
+}
+
+/* Buy button */
+.buy-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center; /* Posisikan tombol di tengah horizontal */
+}
+
+.buy-button:hover {
+    background-color: #0056b3;
+}
+
+    
+  /* Cart Tab */
+  #cart-tab {
+    position: fixed;
+    top: 0;
+    right: -650px; /* Mulai tersembunyi */
+    width: 600px;
+    height: 100%;
+    background-color: #f9f9f9;
+    box-shadow: -4px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 30px; /* Padding diperbesar */
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+  
+  #cart-tab h2 {
+    font-size: 28px; /* Ukuran judul lebih besar */
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #333; /* Warna teks lebih gelap */
+  }
+  
+  #cart-items {
+    list-style: none;
+    padding: 0;
+    font-size: 20px; /* Ukuran teks item lebih besar */
+    line-height: 2; /* Spasi antar item lebih lega */
+  }
+  
+  #cart-items li {
+    display: flex;
+    align-items: center; /* Rata vertikal */
+    justify-content: space-between; /* Pisahkan elemen */
+    margin-bottom: 20px; /* Jarak antar item lebih besar */
+    font-size: 18px; /* Ukuran teks untuk item */
+  }
+  
+  #cart-items img {
+    width: 70px; /* Ukuran gambar item lebih besar */
+    height: 70px;
+    margin-right: 15px; /* Jarak dengan teks */
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  #cart-items .item-details {
+    flex: 1; /* Biarkan teks memenuhi ruang */
+  }
+  
+  #cart-items button {
+    background-color: #d9534f; /* Warna tombol */
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 20px; /* Ukuran tombol lebih besar */
+    border-radius: 5px;
+  }
+  
+  #cart-items button:hover {
+    background-color: #c9302c; /* Warna tombol saat hover */
+  }
+  
+  #cart-total {
+    font-weight: bold;
+    font-size: 22px; /* Ukuran total lebih besar */
+    color: #d9534f;
+    margin-top: 20px;
+    text-align: right; /* Total rata kanan */
+  }
+  
+  #checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #28a745; /* Warna tombol checkout */
+    color: white;
+    font-size: 20px; /* Ukuran tombol lebih besar */
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+    #checkout-btn:hover {
+      background-color: #218838; /* Warna tombol saat hover */
+    }
+    /* Gaya tambahan untuk footer keranjang */
+  #cart-footer {
+    position: sticky;
+    bottom: 0;
+    background-color: #f9f9f9; /* Sesuai warna keranjang */
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Garis pemisah di atas */
+  }
+  
+  #cart-footer p {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  #checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #checkout-btn:hover {
+    background-color: #218838;
+  }
+  .footer-icons img {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+  }
+  
+  
+  .navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    font-style: italic;
+  }
+  .navbar-logo span {
+    font-weight: normal; 
+    background: linear-gradient(to right, #fff, #d4a373);
+    -webkit-background-clip: text;
+    color: transparent; 
+  }
+  .home {
+    padding-top: 1px; /* Tambahkan padding ke elemen dengan class home */
+  }
+  
+  /* Keranjang Belanja */
+  #cart-tab {
+    position: fixed;
+    top: 0;
+    right: -650px; /* Keranjang tersembunyi */
+    width: 350px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #cart-tab h2 {
+    text-align: center;
+    margin: 15px 0;
+  }
+  
+  #cart-content {
+    flex: 1; /* Mengisi ruang kosong */
+    overflow-y: auto; /* Scroll jika item banyak */
+    padding: 0 15px;
+  }
+  
+  #cart-items {
+    font-size: 14px; /* Ukuran font lebih kecil */
+    padding: 0;
+    margin: 0;
+  }
+
+  #cart-items li {
+    display: grid;
+    grid-template-columns: 50px 2fr auto auto; /* Tambahkan kolom untuk tombol */
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  }
+  /* Gambar Produk */
+  #cart-items img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .cart-total {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  #cart-footer {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+  }
+  
+  #checkout-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  #checkout-btn:hover {
+    background-color: #218838;
+  }
+  
+  #close-cart-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px; /* Ukuran ikon */
+    color: #6c757d; /* Warna default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Animasi saat hover */
+}
+
+#close-cart-btn:hover {
+    color: #343a40; /* Warna ikon saat hover */
+}
+
+  /* Tombol Tambah dan Kurang */
+#cart-items button {
+    background-color: #007bff; /* Warna tombol */
+    color: white; /* Warna teks */
+    border: none;
+    padding: 5px 10px; /* Tambahkan padding */
+    cursor: pointer;
+    font-size: 16px; /* Ukuran font yang proporsional */
+    border-radius: 4px; /* Sudut membulat */
+    width: 35px; /* Lebar tombol yang konsisten */
+    height: 35px; /* Tinggi tombol yang konsisten */
+    display: flex; /* Untuk tata letak teks dalam tombol */
+    justify-content: center; /* Pusatkan teks secara horizontal */
+    align-items: center; /* Pusatkan teks secara vertikal */
+    transition: background-color 0.3s ease; /* Efek saat hover */
+}
+
+/* Hover efek untuk tombol */
+#cart-items button:hover {
+    background-color: #0056b3; /* Warna lebih gelap saat hover */
+}
+
+  
+  @media screen and (max-width: 768px) {
+    #cart-tab {
+        width: 100%; /* Lebar penuh di layar kecil */
+    }
+  
+    #cart-items li {
+        grid-template-columns: 1fr; /* Item diatur vertikal */
+        text-align: center;
+    }
+  
+    #cart-items img {
+        margin: 0 auto;
+    }
+  }
