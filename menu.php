@@ -3,7 +3,7 @@ include("Koneksi/koneksi.php");
 session_start();
 
 // Query untuk mendapatkan data makanan
-$sql = "SELECT id_makanan, nama_makanan, deskripsi, harga, img FROM Makanan";
+$sql = "SELECT id_makanan, nama_makanan, deskripsi, harga, img FROM makanan";
 $result = $db->query($sql);
 
 if (!$result) {
