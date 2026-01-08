@@ -40,7 +40,7 @@ if (!$result) {
             </button>
             <div class="collapse navbar-collapse" id="mainNavbarCollapse">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php">Nopal</a></li>
                     <li class="nav-item"><a class="nav-link" href="menu.php">Menu</a></li>
                     <?php if (empty($_SESSION["id_user"])): ?>
                         <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
