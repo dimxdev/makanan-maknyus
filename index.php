@@ -41,7 +41,7 @@ if (!$result) {
             <div class="collapse navbar-collapse" id="mainNavbarCollapse">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="menu.php">Makanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.php">Cemilan</a></li>
                     <?php if (empty($_SESSION["id_user"])): ?>
                         <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                         <li class="nav-item"><a class="nav-link" href="registration.php">Register</a></li>
